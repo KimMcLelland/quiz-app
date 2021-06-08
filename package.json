@@ -1,10 +1,18 @@
 {
   "name": "quiz-app",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend": "nodemon index.js",
+    "frontend": "npm start --prefix front-end",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "bootstrap": "npm install -d && cd frontend && npm install -d",
+    "start": "npm run start-mongo && npm run dev",
+    "start-mongo": "docker run -d -p 27017:27017 -v mdb-data:/data/db --name quizapp mongo",
+    "stop-mongo": "docker stop quizapp && docker container rm quizapp"
   },
   "repository": {
     "type": "git",
@@ -16,5 +24,16 @@
   "bugs": {
     "url": "https://github.com/KimMcLelland/quiz-app/issues"
   },
-  "homepage": "https://github.com/KimMcLelland/quiz-app#readme"
+  "homepage": "https://github.com/KimMcLelland/quiz-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.13"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
+  }
 }
