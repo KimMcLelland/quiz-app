@@ -1,0 +1,9 @@
+.logOrRegister {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submitButton {
+    width: 100px;
+}
