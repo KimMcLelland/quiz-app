@@ -1,11 +1,14 @@
 {
   "name": "quiz-app",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+    },
+
+    
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KimMcLelland/quiz-app.git"
@@ -16,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/KimMcLelland/quiz-app/issues"
   },
-  "homepage": "https://github.com/KimMcLelland/quiz-app#readme"
+  "homepage": "https://github.com/KimMcLelland/quiz-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "description": ""
 }
