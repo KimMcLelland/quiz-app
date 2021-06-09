@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 15vh;
+    background: #272635;
+    color:#E8E9F3;
+    text-decoration: none;
+}
+
+.nav-links{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    color: #E8E9F3;
+    text-decoration: none;
+}
+
+
+
+a:visited { 
+    text-decoration: none; 
+    color: #E8E9F3; 
+   }
+   

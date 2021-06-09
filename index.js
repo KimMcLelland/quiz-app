@@ -1,3 +1,4 @@
+
 import express from "express";
 import mongoose from "mongoose";
 import indexRouter from "./routes/indexRouter.js";
@@ -26,3 +27,4 @@ app.use("/user", userRouter);
 app.listen(3001, () => {
   console.log("Server online");
 });
+
