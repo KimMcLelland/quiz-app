@@ -13,21 +13,18 @@ function Login() {
     setWhichForm(event.target.value)
   }
   const handleUsernameInputChange = (event) => {
-    event.persist();
     setValues((values) => ({
       ...values,
       username: event.target.value,
     }));
   };
   const handlePasswordInputChange = (event) => {
-    event.persist();
     setValues((values) => ({
       ...values,
       password: event.target.value,
     }));
   };
   const handleEmailInputChange = (event) => {
-    event.persist();
     setValues((values) => ({
       ...values,
       email: event.target.value,
