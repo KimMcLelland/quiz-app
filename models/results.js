@@ -1,24 +1,28 @@
 import mongoose from "mongoose";
-import user from "User";
+import Users from "./users.js";
 
-const Score = new mongoose.Schema({
+const Results = new mongoose.Schema({
 	userId: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: "Users",
+		ref: 'User',
 		required: true
 	},
-	score: {
+	points: {
 		type: Number,
 		required: true
 	},
-	intensity: {
+	date: {
+		type: Date,
+		default: Date.now
+	}
+	/*intensity: {
 		type: String,
 		required: true
 	},
 	category: {
 		type: String,
 		required: true
-	}
+	}*/
 })
 
-export default mongoose.model("scores", Score)
+export default mongoose.model("results", Results);
