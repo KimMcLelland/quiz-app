@@ -9,7 +9,7 @@ function Leaderboard() {
     let i;
     for (i in winners) {
       let listOfWinners = winners.map((winners) => (
-        <li>{winners}: </li>
+        <li>{winners}</li>
       ));
 
       return <ol>{listOfWinners}</ol>;
