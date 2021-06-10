@@ -5,20 +5,29 @@ import User from "../models/users.js";
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
+
   try {
+
     const user = await User.findOne({
-      name: req.body.name,
-    });
+      username: req.body.name,
+    }).exec();
+
     const result = await bcrypt.compare(req.body.password, user.password);
     result
       ? res.status(200).json({
           message: "ok",
           status: result,
+          user: {
+            id: user._id,
+            username: user.username,
+            email: user.email
+          }
         })
       : res.status(403).json({
-          message: "Unauthorized access",
+          message: "Authentication Failed!",
           status: result,
         });
+      
   } catch (err) {
     res.status(500).json({
       message: "Server error",

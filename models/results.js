@@ -4,7 +4,7 @@ import Users from "./users.js";
 const Results = new mongoose.Schema({
 	userId: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'User',
+		ref: 'Users',
 		required: true
 	},
 	points: {
