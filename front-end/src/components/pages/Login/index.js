@@ -33,9 +33,12 @@ function Login() {
       email: event.target.value,
     }));
   };
-  const handleSubmit = (event) => {
-    console.log(values.username)
-    console.log(values.email)
+  const handleSubmitLogin = (event) => {
+    console.log(`sending ${values.username} and values.password to back end for verification`)
+  }
+
+  const handleSubmitRegister = (event) => {
+    console.log(`sending ${values.username}, ${values.email} and values.password to back end to be added to database`)
   }
 
   const formChoice = () => {
@@ -52,7 +55,7 @@ function Login() {
           Password:
           <input type = "password" value = {values.password} onChange={handlePasswordInputChange}/>
         </label>
-        <input className = "submitButton" type="submit" value="Submit" onSubmit={handleSubmit} />
+        <input className = "submitButton" type="submit" value="Submit" onSubmit={handleSubmitLogin} />
       </form>
       </div>
       )
@@ -73,7 +76,7 @@ function Login() {
           Email:
           <input type = "text" value = {values.email} onChange={handleEmailInputChange}/>
         </label>
-        <input className = "submitButton" type="submit" value="Submit" onSubmit={handleSubmit} />
+        <input className = "submitButton" type="submit" value="Submit" onSubmit={handleSubmitRegister} />
       </form>
           </div>
         )

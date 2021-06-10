@@ -3,9 +3,13 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 15vh;
-    background: #272635;
+    background: #610d99;
     color:#E8E9F3;
     text-decoration: none;
+}
+
+h3 {
+    color: pink;
 }
 
 .nav-links{
