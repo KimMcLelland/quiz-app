@@ -46,7 +46,7 @@ function Login() {
       return (
         <div>
         <h2>Login:</h2>
-        <form className = "logOrRegister">
+        <form className = "logOrRegister" onSubmit={handleSubmitLogin}>
         <label>
           Username:
           <input type = "text" value = {values.username} onChange={handleUsernameInputChange}/>
@@ -55,7 +55,7 @@ function Login() {
           Password:
           <input type = "password" value = {values.password} onChange={handlePasswordInputChange}/>
         </label>
-        <input className = "submitButton" type="submit" value="Submit" onSubmit={handleSubmitLogin} />
+        <input className = "submitButton" type="submit" value="Submit"  />
       </form>
       </div>
       )
@@ -63,7 +63,7 @@ function Login() {
         return (
           <div>
             <h2>Register</h2>
-      <form className = "logOrRegister">
+      <form className = "logOrRegister" onSubmit={handleSubmitRegister}>
         <label>
           Username:
           <input type = "text" value = {values.username} onChange={handleUsernameInputChange}/>
@@ -76,7 +76,7 @@ function Login() {
           Email:
           <input type = "text" value = {values.email} onChange={handleEmailInputChange}/>
         </label>
-        <input className = "submitButton" type="submit" value="Submit" onSubmit={handleSubmitRegister} />
+        <input className = "submitButton" type="submit" value="Submit"  />
       </form>
           </div>
         )
