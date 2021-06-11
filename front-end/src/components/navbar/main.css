@@ -3,8 +3,8 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 15vh;
-    background: #272635;
-    color:#E8E9F3;
+    background: #610D99;
+    color: pink;
     text-decoration: none;
 }
 
@@ -14,7 +14,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    color: #E8E9F3;
+    color: pink;
     text-decoration: none;
 }
 

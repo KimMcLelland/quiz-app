@@ -5,9 +5,18 @@
 }
 
 .main{
+    height: 100%;
     width: 75%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.questions{
+    width: 80%;
+    background-color:#610D99 ;
+    padding: 20px;
 }
 
 .top{ 
@@ -20,11 +29,11 @@
 
 .ladder{
     width: 25%;
-    background-color:#2C5784 ;
+    background-color:#610D99 ;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #E8E9F3;
+    color: pink;
     margin: 20px;
     border-radius: 20px;
 }
