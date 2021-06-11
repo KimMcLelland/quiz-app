@@ -26,11 +26,14 @@ function Quiz() {
     <div className ="app">
     <div className="main">
       <div className="top">
-        <div clasName="questions">Questions</div>
+        <div clasName="questions">This is a question, please choose from one of the possible answers</div>
       </div>
 
       <div className="bottom">
-        <div clasName="questions">Answers</div>
+        <div clasName="answers">Answer 1</div>
+        <div clasName="answers">Answer 2</div>
+        <div clasName="answers">Answer 3</div>
+        <div clasName="answers">Answer 4</div>
       </div>
 
 
