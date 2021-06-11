@@ -1,17 +1,43 @@
 import './main.css';
 import React, {useState} from 'react';
+import { json } from 'express';
 
 
 function Login() {
+  // setting State variables: object with username, password and email keys
   const [values, setValues] = useState({
     username: "",
     password: "",
     email: "",
   });
+
+  // variables and functions to do with user selecting between login and register
   const [whichForm, setWhichForm] = useState();
   const handleWhichForm = (event) => {
     setWhichForm(event.target.value)
   }
+
+  const sendLogin = async (username, password) => {
+    const response = await fetch ('localhost: 3001/user/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: user.username, 
+        password: user.password,
+      }),
+    });
+  }
+
+  const registerUser = async (username, password, email) => {
+    const response = await fetch ('http://localhost:3001/user/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: user.username, 
+        password: user.password,
+        email: user.email,
+      }),
+    });
+  }
+  // functions to change values when input changes
   const handleUsernameInputChange = (event) => {
     setValues((values) => ({
       ...values,
@@ -30,15 +56,19 @@ function Login() {
       email: event.target.value,
     }));
   };
+
+  // functions that affect what happens when form is submitted
   const handleSubmitLogin = (event) => {
-    console.log(`sending ${values.username} and values.password to back end for verification`)
+    sendLogin(values.username, values.password);
   }
 
   const handleSubmitRegister = (event) => {
-    console.log(`sending ${values.username}, ${values.email} and values.password to back end to be added to database`)
+    registerUser(values.username, values.password, values.email);
   }
 
-  const formChoice = () => {
+  // the function that changes the form that appears (login or register) depending on which 
+  // radio button the user selects
+  const formChoice = () => { 
     if (whichForm === "login")
       return (
         <div>
@@ -79,6 +109,7 @@ function Login() {
         )
   }
 
+  // the general page layout: radio button to select which form and the function call of formChoice
   return (
     <div>
         <h1>Login or register</h1>
@@ -88,7 +119,6 @@ function Login() {
           <input type="radio" id="register" name="whichForm" value="register" />
           <label for="register">Register</label>
         </div>
-        {console.log(whichForm)}
         {formChoice()}
     </div>
   );
