@@ -9,7 +9,7 @@ router.post("/login", async (req, res) => {
   try {
 
     const user = await User.findOne({
-      username: req.body.name,
+      username: req.body.username,
     }).exec();
 
     const result = await bcrypt.compare(req.body.password, user.password);
@@ -41,11 +41,11 @@ router.post("/register", async (req, res) => {
   req.body.password = await bcrypt.hash(req.body.password, salt);
 
   try {
-    const user = await new Users(req.body).save();
+    const user = await new User(req.body).save();
     res.status(200).json({
       message: "ok",
       user: {
-        name: user.name,
+        username: user.username,
         email: user.email,
       },
     });
