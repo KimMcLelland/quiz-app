@@ -43,7 +43,6 @@ router.post("", async(req, res) => {
     try {
         const newResult = new Results(req.body);
         await newResult.save();
-        newResult
         res.status(200).json({
             status: "OK",
             results: {

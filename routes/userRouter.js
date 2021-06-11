@@ -41,7 +41,7 @@ router.post("/register", async (req, res) => {
   req.body.password = await bcrypt.hash(req.body.password, salt);
 
   try {
-    const user = await new User(req.body).save();
+    const user = await new Users(req.body).save();
     res.status(200).json({
       message: "ok",
       user: {
