@@ -1,6 +1,7 @@
 import './main.css';
 import React, {useState} from 'react';
 import { json } from 'express';
+data = response.json();
 
 
 function Login() {
@@ -25,6 +26,8 @@ function Login() {
         password: user.password,
       }),
     });
+    const data=await response.json();
+    return data
   }
 
   const registerUser = async (username, password, email) => {
@@ -36,6 +39,8 @@ function Login() {
         email: user.email,
       }),
     });
+    const data=await response.json();
+    return data
   }
   // functions to change values when input changes
   const handleUsernameInputChange = (event) => {
